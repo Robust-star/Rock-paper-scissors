@@ -8,6 +8,7 @@ const rock_div = document.getElementById('r');
 const paper_div = document.getElementById('p');
 const scissors_div = document.getElementById('s');
 
+//Getting Choices
 function getComputerChoice() {
   const choices = ['r', 'p', 's'];
   const randomNumber = (Math.floor(Math.random() * 3));
@@ -20,6 +21,7 @@ function convertToWord(letter) {
   return "scissors"
 }
 
+//Wining function
 function win(userChoice, computerChoice) {
   userScore++;
   userScore_span.innerHTML = userScore;
@@ -31,6 +33,7 @@ function win(userChoice, computerChoice) {
   setTimeout(function () { document.getElementById(userChoice).classList.remove('green-glow') }, 400);
 }
 
+//loosing function
 function lose(userChoice, computerChoice) {
   computerScore++;
   userScore_span.innerHTML = userScore;
@@ -42,6 +45,7 @@ function lose(userChoice, computerChoice) {
   setTimeout(function () { document.getElementById(userChoice).classList.remove('red-glow') }, 400);
 }
 
+//draw Function
 function draw(userChoice, computerChoice) {
   const smallUserWord = "user".fontsize(3).sub();
   const smallCompWord = "comp".fontsize(3).sub();
@@ -50,6 +54,7 @@ function draw(userChoice, computerChoice) {
   setTimeout(function () { document.getElementById(userChoice).classList.remove('yellow-glow') }, 400);
 }
 
+//User choice Function
 function game(userChoice) {
   const computerChoice = getComputerChoice();
   switch (userChoice + computerChoice) {
